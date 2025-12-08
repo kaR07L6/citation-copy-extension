@@ -1,13 +1,13 @@
-// 引用番号を管理
+// 引用番号
 let citationCounter = 0;
 
-// ページ情報を取得して引用形式を生成
+// ページ情報を取得して引用形式を生成させる
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "getCitation") {
     citationCounter++;
     const citation = generateCitation(request.selectedText, citationCounter);
     copyToClipboard(citation);
-    showNotification(`引用形式でコピーしました！（引用番号: ${citationCounter}）`);
+    showNotification(`引用形式でコピーしました（引用番号: ${citationCounter}）`);
   }
 });
 
@@ -18,14 +18,14 @@ function generateCitation(selectedText, citationNumber) {
   const year = currentDate.getFullYear();
   const accessDate = formatDate(currentDate);
   
-  // 著者情報を取得（meta タグから）
+  // 著者情報の取得
   let author = "";
   const authorMeta = document.querySelector('meta[name="author"]');
   if (authorMeta) {
     author = authorMeta.content;
   }
   
-  // サイト名を取得
+  // サイト名の取得
   let siteName = "";
   const siteNameMeta = document.querySelector('meta[property="og:site_name"]');
   if (siteNameMeta) {

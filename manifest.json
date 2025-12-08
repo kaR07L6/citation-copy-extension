@@ -16,8 +16,5 @@
         "matches": ["<all_urls>"],
         "js": ["content.js"]
       }
-    ],
-    "icons": {
-      "16": "メインサイトアイコン.png"
-    }
+    ]
   }

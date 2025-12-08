@@ -1,25 +1,25 @@
 {
-    "manifest_version": 3,
-    "name": "引用元コピー機能",
-    "version": "1.0.0",
-    "description": "選択したテキストを学術的な引用形式で自動コピー",
-    "permissions": [
-      "contextMenus",
-      "activeTab",
-      "clipboardWrite"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "icons": {
-      "16": "icons/メインサイトアイコン.png",
-      "48": "icons/メインサイトアイコン.png",
-      "128": "icons/メインサイトアイコン.png"
+  "manifest_version": 3,
+  "name": "引用元コピー機能",
+  "version": "1.0.0",
+  "description": "選択したテキストを学術的な引用形式で自動コピー",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
     }
+  ],
+  "icons": {
+    "16": "icons/メインサイトアイコン.png",
+    "48": "icons/メインサイトアイコン.png",
+    "128": "icons/メインサイトアイコン.png"
   }
+}
